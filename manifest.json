@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Text Highlighter & Blurrer",
+  "version": "1.4",
+  "description": "Click words or images to highlight or blur them.",
+  "permissions": ["storage", "scripting", "activeTab"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
